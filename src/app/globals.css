@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0e1a;
+  --surface: #111827;
+  --surface2: #1c2538;
+  --border: #2a3550;
+  --accent: #00d4ff;
+  --accent2: #ff6b6b;
+  --accent3: #ffd93d;
+  --text: #e8edf8;
+  --muted: #7a8ab0;
+  --grid-line: #1a2238;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(0, 212, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(255, 107, 107, 0.04) 0%, transparent 50%);
+}
+
+svg text { font-family: 'Space Mono', monospace; }
+
+/* Axis styles for D3 */
+.axis line,
+.axis path { stroke: var(--border); }
+.axis text { fill: var(--muted); font-size: 10px; font-family: 'Space Mono', monospace; }
+.axis .domain { display: none; }
+.grid-line line { stroke: var(--grid-line); stroke-width: 0.5; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
